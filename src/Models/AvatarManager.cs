@@ -35,7 +35,7 @@ namespace SourceGit.Models
         [GeneratedRegex(@"^(?:(\d+)\+)?(.+?)@.+\.github\.com$")]
         private static partial Regex REG_GITHUB_USER_EMAIL();
 
-        private readonly Lock _synclock = new();
+    private readonly object _synclock = new();
         private string _storePath;
         private List<IAvatarHost> _avatars = new List<IAvatarHost>();
         private Dictionary<string, Bitmap> _resources = new Dictionary<string, Bitmap>();
